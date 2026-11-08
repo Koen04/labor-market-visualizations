@@ -1,0 +1,86 @@
+landing_page = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>U.S. Labor Market Visualizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 850px;
+            margin: 60px auto;
+            padding: 0 25px;
+            line-height: 1.7;
+            color: #24334b;
+        }
+        h1 { color: #17375e; }
+        a { color: #1766aa; }
+        .figure {
+            border: 1px solid #ddd;
+            padding: 22px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>U.S. Workforce Aging and Labor Market Projections</h1>
+    <p>
+        An exploratory analysis combining 2024 American
+        Community Survey (ACS) microdata with Bureau of Labor
+        Statistics (BLS) occupational projections for 2024–2034.
+    </p>
+
+    <div class="figure">
+        <h2>Workforce Aging and Employment Growth</h2>
+        <p>
+            Examines the relationship between the share of
+            workers aged 55+ and projected occupational
+            employment growth.
+        </p>
+        <a href="workforce-aging.html">
+            View interactive visualization
+        </a>
+    </div>
+
+    <div class="figure">
+        <h2>Workforce Aging and Annual Openings</h2>
+        <p>
+            Compares workforce age composition with projected
+            annual occupational openings per 100 workers.
+        </p>
+        <a href="annual-openings.html">
+            View interactive visualization
+        </a>
+    </div>
+
+    <h2>Methodology</h2>
+    <p>
+        ACS microdata were aggregated using person-level survey
+        weights. BLS projections were mapped to comparable ACS
+        occupational categories using the NEM–ACS crosswalk.
+        The matched sample represents approximately 98.09%
+        of weighted ACS employment.
+    </p>
+
+    <p>
+        Occupational openings are projections of hiring
+        opportunities, not direct measures of unfilled
+        vacancies or labor shortages.
+    </p>
+
+    <p>
+        <strong>Tools:</strong> Python, Pandas, Plotly,
+        ACS PUMS, BLS Employment Projections.
+    </p>
+</body>
+</html>
+"""
+
+(output_dir / "index.html").write_text(
+    landing_page,
+    encoding="utf-8"
+)
+
+print("Landing page created!")
